@@ -68,7 +68,7 @@
         {{-- HERO SECTION --}}
         <header class="mx-auto max-w-5xl text-center">
             <h1 class="text-4xl font-bold tracking-tight text-blue-900 sm:text-4xl lg:text-5xl">
-                Selamat Datang di Penjadwalan Lab ICT
+                Dah gw edit slurr
             </h1>
             <p class="mx-auto mt-6 max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">
                 Kami siap membantu kelancaran agenda Anda melalui sistem reservasi yang terintegrasi.
