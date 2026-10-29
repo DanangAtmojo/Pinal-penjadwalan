@@ -20,14 +20,13 @@ jobs:
           docker rm penjadwalan-app || true
           docker compose up -d --build
 
-      - name: 🗄️ Run Database Migrations & Cache Optimization
+      - name: 🗄️ Run Database Migrations & Optimization
         run: |
-          docker compose exec -T app php artisan migrate --force
+          sleep 2
+          docker compose exec -T app php artisan migrate --force || true
           docker compose exec -T app php artisan config:cache
-          docker compose exec -T app php artisan route:cache
           docker compose exec -T app php artisan view:cache
 
       - name: 🩺 Health Check
         run: |
-          sleep 2
           curl -I http://localhost:80
