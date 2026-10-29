@@ -1,0 +1,35 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: penjadwalan-lab:latest
+    container_name: penjadwalan-app
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    environment:
+      APP_NAME: "Penjadwalan Lab ICT"
+      APP_ENV: production
+      APP_KEY: "base64:1J23Q5NiNsvku5NmP4OA98OLtmSqzmFJAyvuuVLfAW8="
+      APP_DEBUG: "false"
+      APP_URL: "http://192.168.18.201"
+      
+      # Koneksi ke Database TurnKey (CT 301)
+      DB_CONNECTION: mysql
+      DB_HOST: 192.168.18.202
+      DB_PORT: 3306
+      DB_DATABASE: penjadwalan_lab
+      DB_USERNAME: laravel_user
+      DB_PASSWORD: PasswordRahasia123!
+      
+      # Optimasi Cache Laravel
+      CACHE_STORE: file
+      SESSION_DRIVER: file
+      QUEUE_CONNECTION: sync
+    volumes:
+      - app_storage:/app/storage
+
+volumes:
+  app_storage:
+    driver: local
