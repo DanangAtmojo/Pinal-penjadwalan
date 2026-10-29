@@ -15,7 +15,10 @@ jobs:
 
       - name: 🐳 Deploy Application with Docker Compose
         run: |
-          docker compose up -d --build --remove-orphans
+          # Bersihkan container lama jika ada agar tidak bentrok nama & port 80
+          docker stop penjadwalan-app || true
+          docker rm penjadwalan-app || true
+          docker compose up -d --build
 
       - name: 🗄️ Run Database Migrations & Cache Optimization
         run: |
