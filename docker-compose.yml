@@ -21,7 +21,7 @@ services:
       DB_PORT: 3306
       DB_DATABASE: penjadwalan_lab
       DB_USERNAME: laravel_user
-      DB_PASSWORD: PasswordRahasia123!
+      DB_PASSWORD: rahasia123
       
       # Optimasi Cache Laravel
       CACHE_STORE: file
