@@ -11,9 +11,9 @@ COPY . .
 RUN npm run build
 
 # ==========================================
-# Tahap 2: Runtime PHP 8.2 (FrankenPHP)
+# Tahap 2: Runtime PHP 8.4 (FrankenPHP)
 # ==========================================
-FROM dunglas/frankenphp:1-php8.2-alpine
+FROM dunglas/frankenphp:1-php8.4-alpine
 
 # Install ekstensi PHP yang dibutuhkan Laravel & library Excel/PDF
 RUN install-php-extensions \
